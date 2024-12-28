@@ -18,6 +18,9 @@ app.get("/", (req, res) => {
     })
 });
 
+const UserRoute = require("./routes/users.js")
+app.use("/users", UserRoute);
+
 module.exports = {
     app
 }
