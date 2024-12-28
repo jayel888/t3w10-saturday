@@ -14,5 +14,12 @@ describe("Root route", () => {
         
         // check the body of the response to see if it matches the 'Hello World!' string
         expect(response.body.message).toBe("Hello World!");
+        expect(response.statusCode).toBe(200);
+    });
+
+    test("Server returns a response without Auth header", async () => {
+        const response = await request(app).get("/");
+        console.log(response);
+        expect(response.headers["Authorisation"]).toBeFalsy();
     })
 });
