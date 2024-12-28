@@ -26,7 +26,7 @@ describe("Users route", () => {
         let targetUserId = "1"
         const response = await request(app).get("/users/" + targetUserId);
     });
-    test.skip("'Create a new user' route returns the newly created user", async () => {
+    test("'Create a new user' route returns the newly created user", async () => {
         // POST localhost:3300/users/signup
         const response = await request(app)
                         .post("/users/signup")
@@ -34,6 +34,9 @@ describe("Users route", () => {
                             username: "Alice",
                             password: "abc123"
                         });
+
+        expect(response.body.username).toBe("Alice")
+        expect(response.body.password).toBe("EncryptedPassword")
     });
     test.skip("'Login user' route returns specific user only", async () => {
         // POST localhost:3300/users/login
