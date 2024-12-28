@@ -2,4 +2,4 @@
 - Jest discussion
 - Write tests with the help of supertest
 - middleware - error handling
-- Hot GitHub runs tests automatically
+- How GitHub runs tests automatically
